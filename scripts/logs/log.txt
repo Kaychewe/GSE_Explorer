@@ -1,0 +1,108 @@
+[06-14-2025 16:07:20]: Installing GEOparse and other requirements...
+Requirement already satisfied: certifi==2025.4.26 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 1)) (2025.4.26)
+Requirement already satisfied: charset-normalizer==3.4.2 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 2)) (3.4.2)
+Requirement already satisfied: contourpy==1.3.2 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 3)) (1.3.2)
+Requirement already satisfied: cycler==0.12.1 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 4)) (0.12.1)
+Requirement already satisfied: fonttools==4.58.4 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 5)) (4.58.4)
+Requirement already satisfied: GEOparse==2.0.4 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 6)) (2.0.4)
+Requirement already satisfied: idna==3.10 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 7)) (3.10)
+Requirement already satisfied: kiwisolver==1.4.8 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 8)) (1.4.8)
+Requirement already satisfied: matplotlib==3.10.3 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 9)) (3.10.3)
+Requirement already satisfied: numpy==2.3.0 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 10)) (2.3.0)
+Requirement already satisfied: packaging==25.0 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 11)) (25.0)
+Requirement already satisfied: pandas==2.3.0 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 12)) (2.3.0)
+Requirement already satisfied: pillow==11.2.1 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 13)) (11.2.1)
+Requirement already satisfied: pyparsing==3.2.3 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 14)) (3.2.3)
+Requirement already satisfied: python-dateutil==2.9.0.post0 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 15)) (2.9.0.post0)
+Requirement already satisfied: pytz==2025.2 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 16)) (2025.2)
+Requirement already satisfied: requests==2.32.4 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 17)) (2.32.4)
+Requirement already satisfied: seaborn==0.13.2 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 18)) (0.13.2)
+Requirement already satisfied: six==1.17.0 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 19)) (1.17.0)
+Requirement already satisfied: tqdm==4.67.1 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 20)) (4.67.1)
+Requirement already satisfied: tzdata==2025.2 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 21)) (2025.2)
+Requirement already satisfied: urllib3==2.4.0 in /home/kasonde/bioinformatics/GSE_Explorer/gpw/lib/python3.12/site-packages (from -r ./../requirements.txt (line 22)) (2.4.0)
+
+[notice] A new release of pip is available: 24.0 -> 25.1.1
+[notice] To update, run: pip install --upgrade pip
+[06-14-2025 16:07:21]: Installing SRA-Tools...
+Retrieving notices: - \ | done
+Channels:
+ - bioconda
+ - defaults
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/kasonde/anaconda3
+
+  added / updated specs:
+    - sra-tools
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    nextflow-25.04.3           |       h2a3209d_0        27.3 MB  bioconda
+    perl-5.22.0.1              |                0        15.1 MB  conda-forge
+    perl-uri-1.71              |       pl5.22.0_1          54 KB  bioconda
+    ------------------------------------------------------------
+                                           Total:        42.4 MB
+
+The following NEW packages will be INSTALLED:
+
+  ncbi-vdb           bioconda/linux-64::ncbi-vdb-3.2.1-h9948957_0 
+  ossuuid            conda-forge/linux-64::ossuuid-1.6.2-h5888daf_1001 
+  perl               conda-forge/linux-64::perl-5.22.0.1-0 
+  perl-threaded      bioconda/noarch::perl-threaded-5.32.1-hdfd78af_1 
+  perl-uri           bioconda/linux-64::perl-uri-1.71-pl5.22.0_1 
+  perl-xml-libxml    bioconda/linux-64::perl-xml-libxml-2.0124-0 
+  perl-xml-namespac~ bioconda/linux-64::perl-xml-namespacesupport-1.11-0 
+  perl-xml-sax       bioconda/linux-64::perl-xml-sax-0.99-0 
+  perl-xml-sax-base  bioconda/linux-64::perl-xml-sax-base-1.08-0 
+  sra-tools          bioconda/linux-64::sra-tools-3.2.1-h4304569_0 
+
+The following packages will be UPDATED:
+
+  libstdcxx-ng       pkgs/main::libstdcxx-ng-11.2.0-h12345~ --> conda-forge::libstdcxx-ng-14.2.0-h4852527_2 
+  nextflow                               25.04.2-h2a3209d_0 --> 25.04.3-h2a3209d_0 
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  certifi            conda-forge/noarch::certifi-2025.4.26~ --> pkgs/main/linux-64::certifi-2025.4.26-py312h06a4308_0 
+
+
+
+Downloading and Extracting Packages: ...working...nextflow-25.04.3     | 27.3 MB   |            |   0% 
+perl-5.22.0.1        | 15.1 MB   |            |   0% [A
+
+perl-uri-1.71        | 54 KB     |            |   0% [A[Anextflow-25.04.3     | 27.3 MB   |            |   0% 
+perl-5.22.0.1        | 15.1 MB   |            |   0% [Anextflow-25.04.3     | 27.3 MB   | 2          |   3% 
+perl-5.22.0.1        | 15.1 MB   | 3          |   3% [A
+
+perl-uri-1.71        | 54 KB     | ##9        |  30% [A[A
+
+perl-uri-1.71        | 54 KB     | ########## | 100% [A[Anextflow-25.04.3     | 27.3 MB   | 8          |   9% 
+perl-5.22.0.1        | 15.1 MB   | 8          |   9% [Anextflow-25.04.3     | 27.3 MB   | #2         |  12% 
+perl-5.22.0.1        | 15.1 MB   | #5         |  15% [A
+
+perl-uri-1.71        | 54 KB     | ########## | 100% [A[A
+
+perl-uri-1.71        | 54 KB     | ########## | 100% [A[Anextflow-25.04.3     | 27.3 MB   | #9         |  19% 
+perl-5.22.0.1        | 15.1 MB   | ###1       |  32% [A
+perl-5.22.0.1        | 15.1 MB   | #####1     |  51% [Anextflow-25.04.3     | 27.3 MB   | ##4        |  25% 
+perl-5.22.0.1        | 15.1 MB   | ######5    |  65% [Anextflow-25.04.3     | 27.3 MB   | ##8        |  29% 
+perl-5.22.0.1        | 15.1 MB   | #######7   |  78% [Anextflow-25.04.3     | 27.3 MB   | ###3       |  34% nextflow-25.04.3     | 27.3 MB   | ####5      |  46% 
+perl-5.22.0.1        | 15.1 MB   | ########## | 100% [A
+perl-5.22.0.1        | 15.1 MB   | ########## | 100% [Anextflow-25.04.3     | 27.3 MB   | #####4     |  54% nextflow-25.04.3     | 27.3 MB   | ######2    |  63% nextflow-25.04.3     | 27.3 MB   | #######3   |  73% nextflow-25.04.3     | 27.3 MB   | ########3  |  84% nextflow-25.04.3     | 27.3 MB   | #########4 |  95% nextflow-25.04.3     | 27.3 MB   | ########## | 100% nextflow-25.04.3     | 27.3 MB   | ########## | 100% 
+perl-5.22.0.1        | 15.1 MB   | ########## | 100% [A                                                     
+                                                     [A
+
+                                                     [A[A done
+Preparing transaction: - done
+Verifying transaction: | / - \ | / - \ | / - \ | / - \ | / - \ | done
+Executing transaction: - \ | / - \ | / - \ | / - \ | / - \ done
+[06-14-2025 16:10:05]: Setup completed.

@@ -8,3 +8,4 @@
 import os 
 import argparse
 import GEOparse
+import logging
