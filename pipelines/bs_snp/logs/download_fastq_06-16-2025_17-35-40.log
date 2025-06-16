@@ -1,0 +1,33 @@
+[06-16-2025 17:35:40]: Logger initialized
+[06-16-2025 17:35:40]: Starting GSE-to-SRR metadata extraction using pysradb
+[06-16-2025 17:35:40]: Querying metadata for GSE210218
+[06-16-2025 17:35:42]: Found study accession SRP389118 for GSE210218
+[06-16-2025 17:35:43]: Saved metadata to ./metadata/GSE210218_run_metadata.tsv
+[06-16-2025 17:35:43]: Starting FASTQ download step...
+[06-16-2025 17:35:43]: Processing metadata file: ./metadata/GSE210218_run_metadata.csv
+[06-16-2025 17:35:43]: ➡️ Downloading SRP389118 to ./data/fastq/GSE210218/SRP389118
+SRP389118 is not a run accession. For more information, see https://www.ncbi.nlm.nih.gov/sra/?term=SRP389118
+Automatic expansion of container accessions is not currently available. See the above link(s) for information about the accessions.
+[06-16-2025 17:35:43]: ❌ Failed to download SRP389118
+[06-16-2025 17:35:43]: ➡️ Downloading Comprehensive to ./data/fastq/GSE210218/Comprehensive
+2025-06-16T21:35:44 fasterq-dump.3.2.1 err: name not found while resolving query within virtual file system module - failed to resolve accession 'Comprehensive' - Cannot resolve accession ( 404 ); ncbi_phid='939B5208A07946A50000446574203224.1.m_2'
+2025-06-16T21:35:49 fasterq-dump.3.2.1 err: name not found while resolving query within virtual file system module - failed to resolve accession 'Comprehensive' - Cannot resolve accession ( 404 ); ncbi_phid='939B5208A07946A500006065762A49F4.1.m_2'
+2025-06-16T21:35:49 fasterq-dump.3.2.1 err: cannot find 'Comprehensive' -> RC(rcVFS,rcQuery,rcResolving,rcName,rcNotFound)
+fasterq-dump quit with error code 3
+[06-16-2025 17:35:49]: ❌ Failed to download Comprehensive
+[06-16-2025 17:35:49]: ➡️ Downloading analyses to ./data/fastq/GSE210218/analyses
+2025-06-16T21:35:50 fasterq-dump.3.2.1 err: name not found while resolving query within virtual file system module - failed to resolve accession 'analyses' - Cannot resolve accession ( 404 ); ncbi_phid='939B5208A07946A50000316577FE53F6.1.m_2'
+2025-06-16T21:35:52 fasterq-dump.3.2.1 err: name not found while resolving query within virtual file system module - failed to resolve accession 'analyses' - Cannot resolve accession ( 404 ); ncbi_phid='322C3922E6CA73250000836E15969617.1.m_2'
+2025-06-16T21:35:52 fasterq-dump.3.2.1 err: cannot find 'analyses' -> RC(rcVFS,rcQuery,rcResolving,rcName,rcNotFound)
+fasterq-dump quit with error code 3
+[06-16-2025 17:35:52]: ❌ Failed to download analyses
+[06-16-2025 17:35:52]: ➡️ Downloading of to ./data/fastq/GSE210218/of
+2025-06-16T21:35:53 fasterq-dump.3.2.1 err: name not found while resolving query within virtual file system module - failed to resolve accession 'of' - Cannot resolve accession ( 404 ); ncbi_phid='322C3922E6CA732500004F6E16941703.1.m_2'
+2025-06-16T21:35:54 fasterq-dump.3.2.1 err: name not found while resolving query within virtual file system module - failed to resolve accession 'of' - Cannot resolve accession ( 404 ); ncbi_phid='322C3922E6CA732500003A6E176EB07B.1.m_2'
+2025-06-16T21:35:54 fasterq-dump.3.2.1 err: cannot find 'of' -> RC(rcVFS,rcQuery,rcResolving,rcName,rcNotFound)
+fasterq-dump quit with error code 3
+[06-16-2025 17:35:54]: ❌ Failed to download of
+[06-16-2025 17:35:54]: ➡️ Downloading partially to ./data/fastq/GSE210218/partially
+2025-06-16T21:35:55 fasterq-dump.3.2.1 err: name not found while resolving query within virtual file system module - failed to resolve accession 'partially' - Cannot resolve accession ( 404 ); ncbi_phid='939B5208A07946A50000596580AF97F0.1.m_2'
+[06-16-2025 17:35:56]: ❌ Failed to download partially
+[06-16-2025 17:35:56]: ➡️ Downloading methylated to ./data/fastq/GSE210218/methylated

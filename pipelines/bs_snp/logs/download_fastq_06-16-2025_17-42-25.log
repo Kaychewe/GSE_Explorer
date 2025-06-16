@@ -1,0 +1,10 @@
+[06-16-2025 17:42:25]: Logger initialized
+[06-16-2025 17:42:25]: Starting GSE-to-SRR metadata extraction using pysradb
+[06-16-2025 17:42:25]: Querying metadata for GSE210218
+[06-16-2025 17:42:27]: Found study accession SRP389118 for GSE210218
+[06-16-2025 17:42:28]: Metadata file for GSE210218 is empty or failed.
+[06-16-2025 17:42:28]: Starting FASTQ download step...
+[06-16-2025 17:42:28]: Processing metadata file: ./metadata/GSE210218_run_metadata.tsv
+[06-16-2025 17:42:28]: Downloading SRR20731213 to ./data/fastq/GSE210218/SRR20731213
+[06-16-2025 17:45:00]: Failed to download SRR20731213
+[06-16-2025 17:45:00]: Downloading SRR20731214 to ./data/fastq/GSE210218/SRR20731214
