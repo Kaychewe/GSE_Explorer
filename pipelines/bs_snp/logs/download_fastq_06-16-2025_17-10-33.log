@@ -1,0 +1,17 @@
+[06-16-2025 17:10:33]: Logger initialized
+[06-16-2025 17:10:33]: Checking installed conda packages...
+[06-16-2025 17:10:36]: Package 'pysradb' is installed.
+[06-16-2025 17:10:38]: Package 'bismark' is installed.
+[06-16-2025 17:10:44]: Package 'bowtie2' is installed.
+[06-16-2025 17:10:47]: Package 'samtools' is installed.
+[06-16-2025 17:10:49]: Package 'sra-tools' is installed.
+[06-16-2025 17:10:52]: Package 'fastqc' is installed.
+[06-16-2025 17:10:54]: Package 'pandas' is installed.
+[06-16-2025 17:10:56]: Package 'numpy' is installed.
+[06-16-2025 17:10:58]: Package 'matplotlib' is installed.
+[06-16-2025 17:11:01]: Package 'multiqc' is installed.
+[06-16-2025 17:11:01]: All required packages are installed.
+[06-16-2025 17:11:01]: Starting GSE-to-SRR metadata extraction using pysradb
+[06-16-2025 17:11:01]: Querying metadata for GSE210218
+[06-16-2025 17:11:03]: Found study accession SRP389118 for GSE210218
+[06-16-2025 17:11:04]: Metadata file for GSE210218 is empty or failed.

@@ -1,0 +1,6 @@
+[06-16-2025 17:02:29]: setup.sh started...
+[06-16-2025 17:02:29]: Installing packages: matplotlib multiqc
+[06-16-2025 17:03:17]: Successfully installed matplotlib.
+[06-16-2025 17:04:28]: Successfully installed multiqc.
+[06-16-2025 17:04:28]: setup.sh completed.
+[06-16-2025 17:04:28]: saving environment to YML

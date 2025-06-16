@@ -1,0 +1,8 @@
+[06-16-2025 16:32:49]: setup.sh started...
+[06-16-2025 16:32:49]: Installing packages: pysradb bismark bowtie2 samtools sra-tools fastqc multiqc pandas numpy matplotlib
+[06-16-2025 16:33:20]: Successfully installed pysradb.
+[06-16-2025 16:33:37]: Successfully installed bismark.
+[06-16-2025 16:34:24]: Successfully installed bowtie2.
+[06-16-2025 16:34:42]: Successfully installed samtools.
+[06-16-2025 16:35:11]: Successfully installed sra-tools.
+[06-16-2025 16:35:34]: Successfully installed fastqc.

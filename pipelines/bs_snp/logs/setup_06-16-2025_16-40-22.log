@@ -1,0 +1,6 @@
+[06-16-2025 16:40:22]: setup.sh started...
+[06-16-2025 16:40:22]: Installing packages: multiqc matplotlib
+[06-16-2025 16:46:56]: FAILED to install multiqc.
+[06-16-2025 16:47:44]: FAILED to install matplotlib.
+[06-16-2025 16:47:44]: setup.sh completed.
+[06-16-2025 16:47:44]: saving environment to YML

@@ -1,0 +1,13 @@
+[06-16-2025 16:57:18]: Logger initialized
+[06-16-2025 16:57:18]: Checking installed conda packages...
+[06-16-2025 16:57:19]: Package 'pysradb' is installed.
+[06-16-2025 16:57:20]: Package 'bismark' is installed.
+[06-16-2025 16:57:21]: Package 'bowtie2' is installed.
+[06-16-2025 16:57:22]: Package 'samtools' is installed.
+[06-16-2025 16:57:23]: Package 'sra-tools' is installed.
+[06-16-2025 16:57:25]: Package 'fastqc' is installed.
+[06-16-2025 16:57:26]: Package 'pandas' is installed.
+[06-16-2025 16:57:27]: Package 'numpy' is installed.
+[06-16-2025 16:57:27]: All required packages are installed.
+[06-16-2025 16:57:27]: Starting GSE-to-SRR metadata extraction using pysradb
+[06-16-2025 16:57:27]: Querying metadata for GSE210218

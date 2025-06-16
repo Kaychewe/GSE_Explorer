@@ -1,0 +1,13 @@
+[06-16-2025 16:58:31]: Logger initialized
+[06-16-2025 16:58:31]: Checking installed conda packages...
+[06-16-2025 16:58:32]: Package 'pysradb' is MISSING.
+[06-16-2025 16:58:33]: Package 'bismark' is installed.
+[06-16-2025 16:58:33]: Package 'bowtie2' is installed.
+[06-16-2025 16:58:34]: Package 'samtools' is installed.
+[06-16-2025 16:58:35]: Package 'sra-tools' is MISSING.
+[06-16-2025 16:58:36]: Package 'fastqc' is MISSING.
+[06-16-2025 16:58:37]: Package 'pandas' is MISSING.
+[06-16-2025 16:58:37]: Package 'numpy' is MISSING.
+[06-16-2025 16:58:37]: Missing packages: pysradb sra-tools fastqc pandas numpy
+[06-16-2025 17:00:46]: Starting GSE-to-SRR metadata extraction using pysradb
+[06-16-2025 17:00:46]: Querying metadata for GSE210218

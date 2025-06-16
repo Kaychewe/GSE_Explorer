@@ -1,0 +1,10 @@
+[06-16-2025 16:06:21]: Logger initialized
+[06-16-2025 16:06:21]: Checking installed conda packages...
+[06-16-2025 16:06:22]: Package 'pysradb' is MISSING.
+[06-16-2025 16:06:23]: Package 'bismark' is MISSING.
+[06-16-2025 16:06:24]: Package 'bowtie2' is MISSING.
+[06-16-2025 16:06:26]: Package 'samtools' is MISSING.
+[06-16-2025 16:06:27]: Package 'sra-tools' is installed.
+[06-16-2025 16:06:28]: Package 'fastqc' is MISSING.
+[06-16-2025 16:06:29]: Package 'multiqc' is MISSING.
+[06-16-2025 16:06:29]: Missing packages: pysradb bismark bowtie2 samtools fastqc multiqc

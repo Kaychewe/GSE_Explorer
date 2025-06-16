@@ -1,0 +1,5 @@
+[06-16-2025 16:15:13]: setup.sh started...
+[06-16-2025 16:15:13]: Installing packages: matplotlib
+[06-16-2025 16:16:51]: Successfully installed matplotlib.
+[06-16-2025 16:16:51]: setup.sh completed.
+[06-16-2025 16:16:51]: saving environment to YML

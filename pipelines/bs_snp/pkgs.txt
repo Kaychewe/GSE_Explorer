@@ -1,0 +1,10 @@
+pysradb
+bismark
+bowtie2
+samtools
+sra-tools
+fastqc
+pandas
+numpy
+matplotlib
+multiqc

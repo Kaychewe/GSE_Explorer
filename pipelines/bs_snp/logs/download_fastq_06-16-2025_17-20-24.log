@@ -1,0 +1,5 @@
+[06-16-2025 17:20:24]: Logger initialized
+[06-16-2025 17:20:24]: Starting GSE-to-SRR metadata extraction using pysradb
+[06-16-2025 17:20:24]: Querying metadata for GSE210218
+[06-16-2025 17:20:26]: Found study accession SRP389118 for GSE210218
+[06-16-2025 17:20:27]: Saved metadata to ./metadata/GSE210218_run_metadata.csv

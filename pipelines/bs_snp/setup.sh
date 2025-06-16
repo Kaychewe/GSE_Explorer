@@ -1,50 +1,53 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # file: setup.sh
-# author: Kasonde Chewe
-# date: 6/16/2025
+# date: 06-16-2025
 
-# === Parse Arguments ===
-PACKAGES=()
-
-while [[ "$#" -gt 0 ]]; do
-    case $1 in
-        -p|--packages) shift; IFS=',' read -ra PACKAGES <<< "$1" ;;
-        *) echo "Unknown parameter passed: $1"; exit 1 ;;
-    esac
-    shift
-done
-
-# === Timestamped Log Setup ===
 timestamp=$(date +"%m-%d-%Y_%H-%M-%S")
 mkdir -p logs
-LOG_FILE="logs/log_${timestamp}.txt"
+LOG_FILE="logs/setup_${timestamp}.log"
+export LOG_FILE
 
-# === Import Utility Functions ===
-source ./utils.sh
+# === Import helper ===
+source utils.sh
+message "setup.sh started..." #>> "$LOG_FILE" 2>&1
 
-message "Setup started"
+# === Parse command-line packages ===
+PACKAGES_TO_INSTALL=()
 
-# === Install Python Packages from requirements.txt ===
-if [[ -f requirements.txt ]]; then
-    message "📦 Installing Python packages from requirements.txt"
-    pip install -r requirements.txt >> "$LOG_FILE" 2>&1
-else
-    message "⚠️ requirements.txt not found"
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -p|--packages)
+            shift
+            while [[ $# -gt 0 && ! "$1" =~ ^- ]]; do
+                PACKAGES_TO_INSTALL+=("$1")
+                shift
+            done
+            ;;
+        *)
+            shift
+            ;;
+    esac
+done
+
+# === Install packages ===
+if [ ${#PACKAGES_TO_INSTALL[@]} -eq 0 ]; then
+    message "No packages provided to setup.sh. Exiting." #>> "$LOG_FILE" 2>&1
+    exit 0
 fi
 
-# === Create Conda Environment and Core Tools ===
-ENV_NAME="bsseq_env"
-message "🐍 Creating conda environment: $ENV_NAME"
-conda create -n "$ENV_NAME" -c bioconda bismark bowtie2 samtools sra-tools -y >> "$LOG_FILE" 2>&1
+message "Installing packages: ${PACKAGES_TO_INSTALL[*]}" #>> "$LOG_FILE" 2>&1
 
-# === Install Any Extra Packages Passed via CLI ===
-if [[ ${#PACKAGES[@]} -gt 0 ]]; then
-    message "➕ Installing additional packages: ${PACKAGES[*]}"
-    conda activate "$ENV_NAME"
-    for pkg in "${PACKAGES[@]}"; do
-        conda install -c bioconda "$pkg" -y >> "$LOG_FILE" 2>&1
-    done
-fi
+for pkg in "${PACKAGES_TO_INSTALL[@]}"; do
+    conda install -y -c bioconda "$pkg" #>> "$LOG_FILE" 2>&1 || \
+    conda install -y -c conda-forge "$pkg" #>> "$LOG_FILE" 2>&1
 
-message "✅ Setup completed"
-message "📄 Log saved to: $LOG_FILE"
+    if conda list | awk '{print $1}' | grep -qx "$pkg"; then
+        message "Successfully installed $pkg." #>> "$LOG_FILE" 2>&1
+    else
+        message "FAILED to install $pkg." #>> "$LOG_FILE" 2>&1
+    fi
+done
+
+message "setup.sh completed." #>> "$LOG_FILE" 2>&1
+message "saving environment to YML"
+conda env export > environment.yml

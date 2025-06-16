@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #SBATCH --job-name=bs_download
 #SBATCH --output=logs/download_%j.out
 #SBATCH --error=logs/download_%j.err
@@ -11,53 +11,115 @@
 eval "$(conda shell.bash hook)"
 conda activate bsseq_env
 
-# === Check-1: Are packages installed? ===
 
+# === Logging Setup ===
+timestamp=$(date +"%m-%d-%Y_%H-%M-%S")
+mkdir -p logs
+LOG_FILE="logs/download_fastq_${timestamp}.log"
+export LOG_FILE
+
+# === Import Utility Functions ===
+source utils.sh 
+message "Logger initialized" #>> "$LOG_FILE" 2>&1
+
+
+# # === Check-1: Are required packages installed in the current conda environment ===
+# REQUIRED_PKGS="./pkgs.txt"
+# MISSING_PKGS=()
+
+# message "Checking installed conda packages..." #>> "$LOG_FILE" 2>&1
+# while IFS= read -r pkg || [[ -n "$pkg" ]]; do
+#     pkg=$(echo "$pkg" | xargs) 
+#     if [[ -z "$pkg" ]]; then
+#         continue  
+#     fi
+#     if conda list | awk '{print $1}' | grep -qx "$pkg"; then
+#         message "Package '$pkg' is installed." #>> "$LOG_FILE" 2>&1
+#     else
+#         message "Package '$pkg' is MISSING." #>> "$LOG_FILE" 2>&1
+#         MISSING_PKGS+=("$pkg")
+#     fi
+# done < "$REQUIRED_PKGS"
+
+# if [ ${#MISSING_PKGS[@]} -ne 0 ]; then
+#     message "Missing packages: ${MISSING_PKGS[*]}" #>> "$LOG_FILE" 2>&1
+#     bash setup.sh --packages "${MISSING_PKGS[@]}"  #>> "$LOG_FILE" 2>&1
+
+# else
+#     message "All required packages are installed." #>> "$LOG_FILE" 2>&1
+# fi
 
 
 # === Setup Directories ===
-SHARED_BASE="/ifs/groups/sacanGrp/kc3745/pipelines/bs_snp"
-INPUT_FILE="input/metadata_input.txt"
-LOG_FILE="$SHARED_BASE/logs/download_metadata.csv"
+# SHARED_BASE="/ifs/groups/sacanGrp/kc3745/pipelines/bs_snp" # Uncomment this line for actual environment setup
+SHARED_BASE="."  # Local environment or temporary setup
+GSE_FILE="gse.txt"  # Should contain GSE IDs, one per line (e.g., GSE33722)
+
+# Create necessary directories for metadata and fastq files
+mkdir -p "$SHARED_BASE/metadata"
 FASTQ_DIR="$SHARED_BASE/data/fastq"
 mkdir -p "$FASTQ_DIR" logs
 
-# === Write CSV Header if doesn't exist ===
-# Use pysradb instead 
+message "Starting GSE-to-SRR metadata extraction using pysradb"
+# === Extract metadata for each GSE ===
+while IFS= read -r GSE || [[ -n "$GSE" ]]; do
+    GSE=$(echo "$GSE" | xargs)  # Trim any leading/trailing spaces from GSE ID
+    if [[ -z "$GSE" ]]; then
+        continue  # Skip empty lines in GSE file
+    fi
+
+    message "Querying metadata for $GSE"
+    
+    # Convert GSE to SRP using pysradb (Get the SRP accession from GSE)
+    SRP=$(pysradb gse-to-srp "$GSE" | awk 'NR==2 {print $2}')
+    message "Found study accession $SRP for $GSE"
+
+    # Save full metadata to a CSV file for the corresponding GSE
+    pysradb metadata "$SRP" --desc --expand > "$SHARED_BASE/metadata/${GSE}_run_metadata.csv"
+
+    # Confirm if the metadata file was successfully written
+    if [[ -s "$SHARED_BASE/metadata/${GSE}_run_metadata.csv" ]]; then
+        message "Saved metadata to $SHARED_BASE/metadata/${GSE}_run_metadata.csv"
+    else
+        message "Metadata file for $GSE is empty or failed."
+    fi
+
+done < "$GSE_FILE"
 
 
 
-if [ ! -f "$LOG_FILE" ]; then
-    echo "Sample_ID,SRR,Paired,Size_MB,Download_Time_sec,Output_Dir" > "$LOG_FILE"
-fi
 
-# === Process Each Entry ===
-while read -r ID; do
-    echo "🔍 Processing $ID"
+# # if [ ! -f "$LOG_FILE" ]; then
+# #     echo "Sample_ID,SRR,Paired,Size_MB,Download_Time_sec,Output_Dir" > "$LOG_FILE"
+# # fi
 
-    # Use pysradb to find SRR accessions
-    SRRS=$(pysradb gse-to-srp $ID | tail -n +2 | awk '{print $2}' | xargs pysradb srp-to-srr | tail -n +2 | awk '{print $3}' | sort -u)
+# # # === Process Each Entry ===
+# # while read -r ID; do
+# #     echo "🔍 Processing $ID"
 
-    for SRR in $SRRS; do
-        START=$(date +%s)
+# #     # Use pysradb to find SRR accessions
+# #     SRRS=$(pysradb gse-to-srp $ID | tail -n +2 | awk '{print $2}' | xargs pysradb srp-to-srr | tail -n +2 | awk '{print $3}' | sort -u)
 
-        # Check layout (PE or SE)
-        LAYOUT=$(pysradb metadata $SRR | grep "$SRR" | awk '{print $6}')
-        [ "$LAYOUT" == "PAIRED" ] && PAIRED="yes" || PAIRED="no"
+# #     for SRR in $SRRS; do
+# #         START=$(date +%s)
 
-        # Download FASTQ
-        fasterq-dump "$SRR" --split-files --threads 4 -O "$FASTQ_DIR"
+# #         # Check layout (PE or SE)
+# #         LAYOUT=$(pysradb metadata $SRR | grep "$SRR" | awk '{print $6}')
+# #         [ "$LAYOUT" == "PAIRED" ] && PAIRED="yes" || PAIRED="no"
 
-        # Calculate file size
-        SIZE=$(du -sm "$FASTQ_DIR/${SRR}"* | awk '{total+=$1} END{print total}')
+# #         # Download FASTQ
+# #         fasterq-dump "$SRR" --split-files --threads 4 -O "$FASTQ_DIR"
 
-        END=$(date +%s)
-        TIME=$((END - START))
+# #         # Calculate file size
+# #         SIZE=$(du -sm "$FASTQ_DIR/${SRR}"* | awk '{total+=$1} END{print total}')
 
-        # Log results
-        echo "$ID,$SRR,$PAIRED,$SIZE,$TIME,$FASTQ_DIR" >> "$LOG_FILE"
-        echo "✅ Finished $SRR — $SIZE MB in $TIME sec"
-    done
-done < "$INPUT_FILE"
+# #         END=$(date +%s)
+# #         TIME=$((END - START))
 
-echo "🎉 Download pipeline complete."
+# #         # Log results
+# #         echo "$ID,$SRR,$PAIRED,$SIZE,$TIME,$FASTQ_DIR" >> "$LOG_FILE"
+# #         echo "✅ Finished $SRR — $SIZE MB in $TIME sec"
+# #     done
+# # done < "$INPUT_FILE"
+
+# # echo "🎉 Download pipeline complete."

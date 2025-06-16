@@ -1,0 +1,5 @@
+[06-16-2025 17:15:53]: Logger initialized
+[06-16-2025 17:15:53]: Starting GSE-to-SRR metadata extraction using pysradb
+[06-16-2025 17:15:53]: Querying metadata for GSE210218
+[06-16-2025 17:15:55]: Found study accession SRP389118 for GSE210218
+[06-16-2025 17:15:56]: Metadata file for GSE210218 is empty or failed.

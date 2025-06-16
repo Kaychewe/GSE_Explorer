@@ -1,0 +1,12 @@
+[06-16-2025 17:15:08]: Logger initialized
+[06-16-2025 17:15:08]: Checking installed conda packages...
+[06-16-2025 17:15:10]: Package 'pysradb' is installed.
+[06-16-2025 17:15:13]: Package 'bismark' is installed.
+[06-16-2025 17:15:15]: Package 'bowtie2' is installed.
+[06-16-2025 17:15:18]: Package 'samtools' is installed.
+[06-16-2025 17:15:20]: Package 'sra-tools' is installed.
+[06-16-2025 17:15:23]: Package 'fastqc' is installed.
+[06-16-2025 17:15:25]: Package 'pandas' is installed.
+[06-16-2025 17:15:31]: Package 'numpy' is installed.
+[06-16-2025 17:15:33]: Package 'matplotlib' is installed.
+[06-16-2025 17:15:35]: Package 'multiqc' is installed.
