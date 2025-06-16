@@ -1,0 +1,1000 @@
+ 1039  cd core/
+ 1040  python manage.py runserver
+ 1041  python manage.py runserver 0.0.0.0:8001
+ 1042  /usr/bin/python3 /home/kasonde/.vscode-server/extensions/ms-python.python-2025.4.0/python_files/printEnvVariablesToFile.py /home/kasonde/.vscode-server/extensions/ms-python.python-2025.4.0/python_files/deactivate/bash/envVars.txt
+ 1043  cd ~
+ 1044  ls
+ 1045  cd Projects/
+ 1046  ls
+ 1047  cd PSMG
+ 1048  ls
+ 1049  git pull
+ 1050  ls
+ 1051  cd core/
+ 1052  ls
+ 1053  python manage.py runserver
+ 1054  cd ~/Projects/PSMG
+ 1055  ls
+ 1056  cd core/
+ 1057  code .
+ 1058  nano week1_microarrays_reading.md
+ 1059  cat week1_microarrays_reading.md 
+ 1060  cd  ~
+ 1061  cd Projects/PSMG
+ 1062  ls
+ 1063  cd core/
+ 1064  ls
+ 1065  code .
+ 1066  cd ~
+ 1067  ls
+ 1068  cd Practice/
+ 1069  code .
+ 1070  ls
+ 1071  jupyter notebook
+ 1072  python manage.py makemigrations
+ 1073  python manage.py migrate
+ 1074  python manage.py makemigrations
+ 1075  python manage.py migrate
+ 1076  python manage.py shell
+ 1077  python manage.py makemigrations
+ 1078  python manage.py shell
+ 1079  python manage.py migrate
+ 1080  python manage.py migrate dashboard 0001  # rollback to before slug
+ 1081  python manage.py makemigrations
+ 1082  python manage.py migrate
+ 1083  python manage.py migrate dashboard 0001  # rollback to before slug
+ 1084  python manage.py makemigrations
+ 1085  python manage.py migrate
+ 1086  python manage.py makemigrations
+ 1087  python manage.py migrate
+ 1088  python manage.py makemigrations
+ 1089  python manage.py migrate
+ 1090  python manage.py makemigrations
+ 1091  python manage.py migrate
+ 1092  rm dashboard/migrations/0002_project_slug.py
+ 1093  python manage.py migrate dashboard zero
+ 1094  ls dashboard/migrations/
+ 1095  rm dashboard/migrations/000*.py
+ 1096  python manage.py makemigrations
+ 1097  python manage.py migrate
+ 1098  python manage.py runserver
+ 1099  rm dashboard/migrations/000*.py
+ 1100  psql 
+ 1101  history
+ 1102  sudo -i -u postgres
+ 1103  sudo -u postgres psql
+ 1104  rm dashboard/migrations/0002_*.py
+ 1105  rm dashboard/migrations/0003_*.py
+ 1106  rm dashboard/migrations/0004_*.py
+ 1107  find dashboard/migrations/ -name "*.pyc" -delete
+ 1108  python manage.py makemigrations dashboard
+ 1109  python manage.py migrate dashboard --fake
+ 1110  python manage.py shell
+ 1111  python
+ 1112  Copy
+ 1113  Edit
+ 1114  # Remove previous fake tracking if present
+ 1115  find dashboard/migrations -name "0001_initial.py" -delete
+ 1116  find dashboard/migrations -name "*.pyc" -delete
+ 1117  sudo -u postgres psql
+ 1118  python manage.py makemigrations dashboard
+ 1119  python manage.py migrate
+ 1120  sudo -u postgres psql
+ 1121  python manage.py makemigrations dashboard
+ 1122  python manage.py migrate
+ 1123  python manage.py migrate contenttypes --fake-initial
+ 1124  python manage.py migrate auth --fake-initial
+ 1125  python manage.py migrate admin --fake-initial
+ 1126  python manage.py migrate sessions --fake-initial
+ 1127  sudo -u postgres psql
+ 1128  \l
+ 1129  sudo -u postgres psql
+ 1130  python manage.py makemigrations
+ 1131  python manage.py migrate
+ 1132  python manage.py runserver
+ 1133  git add *
+ 1134  git commit -m "added unique slugs"
+ 1135  git push
+ 1136  python manage.py makemigrations
+ 1137  python manage.py migrate
+ 1138  python manage.py runserver
+ 1139  sudo fuser -k 8000/tcp
+ 1140  python manage.py runserver
+ 1141  LS
+ 1142  ls
+ 1143  python manage.py runserver
+ 1144  cd ../
+ 1145  ls
+ 1146  cd planner/
+ 1147  ls
+ 1148  cd ../
+ 1149  ls
+ 1150  ls static/
+ 1151  cd planner/
+ 1152  ls
+ 1153  logger.md
+ 1154  code log.md
+ 1155  mkdir renders
+ 1156  ls
+ 1157  cd ../
+ 1158  ls
+ 1159  cd core
+ 1160  ls
+ 1161  cd dashboard/
+ 1162  ls
+ 1163  cd templates/
+ 1164  ls
+ 1165  cd dashboard/
+ 1166  ls
+ 1167  code edit_project.html
+ 1168  cd ../../../
+ 1169  ls
+ 1170  cd ../
+ 1171  git add *
+ 1172  git commit -m "projects modifications, delete, edit etc"
+ 1173  git add
+ 1174  git push
+ 1175  cd core/
+ 1176  python manage.py makemigrations
+ 1177  python manage.py migrate
+ 1178  cd ../../../
+ 1179  ls
+ 1180  cd Projects/
+ 1181  ls
+ 1182  cd PSMG
+ 1183  ls
+ 1184  cd planner/
+ 1185  ls
+ 1186  mkdir features
+ 1187  ls
+ 1188  cd features/
+ 1189  tasks.md
+ 1190  code tasks.md
+ 1191  /usr/bin/python3 /home/kasonde/.vscode-server/extensions/ms-python.python-2025.4.0/python_files/printEnvVariablesToFile.py /home/kasonde/.vscode-server/extensions/ms-python.python-2025.4.0/python_files/deactivate/bash/envVars.txt
+ 1192  cd ~
+ 1193  ls
+ 1194  cd Projects/
+ 1195  ls
+ 1196  cd PSMG
+ 1197  ls
+ 1198  cd core
+ 1199  code .
+ 1200  cd ../planner/
+ 1201  code .
+ 1202  cd ../
+ 1203  ls
+ 1204  code .
+ 1205  code summary_workout.ipynb
+ 1206  ls
+ 1207  code .
+ 1208  make stream
+ 1209  ./stream data1.cus 
+ 1210  code .
+ 1211  exit
+ 1212  nano programming_assignment_description.md
+ 1213  code .
+ 1214  cd code/
+ 1215  mkdir R MATLAB
+ 1216  ls
+ 1217  cd ../
+ 1218  cat assignment_description.md 
+ 1219  cd code/MATLAB/
+ 1220  touch w3_miRNA.mlx
+ 1221  cd ../../
+ 1222  ks
+ 1223  tree
+ 1224  cd ~
+ 1225  ls
+ 1226  code test_customparser.cpp
+ 1227  g++ -std=c++11 test_customparser.cpp content.cpp user.cpp customparser.cpp -o test_customparser
+ 1228  ./test_customparser
+ 1229  g++ -std=c++11 test_customparser.cpp content.cpp user.cpp customparser.cpp -o test_customparser
+ 1230  ./test_customparser
+ 1231  unzip *
+ 1232  docker --version
+ 1233  docker pull ubuntu:18.04
+ 1234  docker run -it ubuntu:18.04 /bin/bash
+ 1235  pwd
+ 1236  docker run -it -v /mnt/c/Users/Kasonde/OneDrive/Documents/Wyzant/Wyzant/Sandra/final_version:/workspace ubuntu:18.04 /bin/bash
+ 1237  du -h
+ 1238  ls
+ 1239  cd bmes543.ZacharyHeffernan.zh438
+ 1240  ls
+ 1241  cd mirna/
+ 1242  ls
+ 1243  tree
+ 1244  ls
+ 1245  cd notes/
+ 1246  ls
+ 1247  cd ..
+ 1248  cat assignment_description.md 
+ 1249  code .
+ 1250  ls
+ 1251  tree
+ 1252  code .
+ 1253  cd ~/
+ 1254  ls
+ 1255  cd Projects/
+ 1256  ls
+ 1257  mkdir wyzant
+ 1258  cd wyzant/
+ 1259  pip install requests beautifulsoup4 playsound
+ 1260  code .
+ 1261  exit
+ 1262  ls
+ 1263  mkdir Projects
+ 1264  cd Projects/
+ 1265  mkdir wyzant
+ 1266  nano notifications.py
+ 1267  exit
+ 1268  mv notifications.py wyzant/
+ 1269  cd wyzant/
+ 1270  exit
+ 1271  code .
+ 1272  exit
+ 1273  cd 04282025/
+ 1274  unzip *
+ 1275  ls
+ 1276  mkdir additional data body
+ 1277  ls
+ 1278  cd ../04302025/
+ 1279  ls
+ 1280  unzip *
+ 1281  mkdir additional data body
+ 1282  ls
+ 1283  pip install pygobject
+ 1284  make clean
+ 1285  code .
+ 1286  make clean
+ 1287  ls ../week3-miRNAs/
+ 1288  mkdir code data notes
+ 1289  nano assignment_description.md
+ 1290  vim assignment_description.md 
+ 1291  code .
+ 1292  cd ~/Projects/PSMG
+ 1293  ls
+ 1294  cd core/
+ 1295  ls
+ 1296  tree
+ 1297  cd dashboard/templates/
+ 1298  ls
+ 1299  cd dashboard/
+ 1300  ls
+ 1301  code .
+ 1302  pwd
+ 1303  cd ~
+ 1304  cd ~/Projects/PSMG
+ 1305  ls
+ 1306  mkdir documentation
+ 1307  cd core/
+ 1308  ls
+ 1309  cod .
+ 1310  cd ../
+ 1311  code .
+ 1312  tmux
+ 1313  cd ~
+ 1314  ls
+ 1315  cd Projects/
+ 1316  cd PSMG
+ 1317  ls
+ 1318  cd core
+ 1319  code .
+ 1320  code .
+ 1321  tree
+ 1322  cd ~
+ 1323  ls
+ 1324  cd Projects/PSMG
+ 1325  ls
+ 1326  git pull
+ 1327  ls
+ 1328  git pull origin main
+ 1329  ls
+ 1330  cd core/
+ 1331  ls
+ 1332  cd ../
+ 1333  ls
+ 1334  code .
+ 1335  python manage.py runserver
+ 1336  python manage.py runserver 8001
+ 1337  code .
+ 1338  cd core/
+ 1339  tree
+ 1340  ls dashboard/templates/
+ 1341  tree dashboard/templates/
+ 1342  tree 
+ 1343  git add *
+ 1344  git commit -m "added js for password show/hide functionality"
+ 1345  git push origin main
+ 1346  ls
+ 1347  cd dashboard/
+ 1348  ls
+ 1349  cd templates/
+ 1350  ls
+ 1351  cd ../
+ 1352  ls
+ 1353  wget https://sdmntpreastus.oaiusercontent.com/files/00000000-1378-61f9-ab33-33918acf2246/raw?se=2025-05-12T14%3A32%3A22Z&sp=r&sv=2024-08-04&sr=b&scid=00000000-0000-0000-0000-000000000000&skoid=31bc9c1a-c7e0-460a-8671-bf4a3c419305&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-12T14%3A24%3A21Z&ske=2025-05-13T14%3A24%3A21Z&sks=b&skv=2024-08-04&sig=OQ8nnpIXayJrMEJiFhPi5OqIRwQBzoitSen2CCIdswk%3D
+ 1354  ls
+ 1355  rm wget-log 
+ 1356  ls
+ 1357  tree
+ 1358  cd ../../
+ 1359  ls
+ 1360  cd static/
+ 1361  ls
+ 1362  trels
+ 1363  ls
+ 1364  mkdir images
+ 1365  cp psmg-logo.png images/
+ 1366  ls
+ 1367  tree
+ 1368  ls
+ 1369  rm psmg-logo.png 
+ 1370  cd ../
+ 1371  tree
+ 1372  ls
+ 1373  cd core
+ 1374  ls
+ 1375  cd ../static/
+ 1376  ls
+ 1377  tree
+ 1378  cd ../
+ 1379  mkdir media
+ 1380  cd ~/Projects/PSMG/core/dashboard/templates/dashboard/
+ 1381  ls
+ 1382  code update_profile_image.html
+ 1383  cd ~/Projects/PSMG
+ 1384  ls
+ 1385  mkdir -p media/profile_photos
+ 1386  cd media/
+ 1387  ls
+ 1388  tree
+ 1389  pwd
+ 1390  tree
+ 1391  cd ../
+ 1392  git add *
+ 1393  git commit -m "profile picture functionality"
+ 1394  git push origin main
+ 1395  cd core/settings/
+ 1396  ls
+ 1397  mkdir templates
+ 1398  mkdir templates/settings
+ 1399  ls
+ 1400  touch urls.py
+ 1401  ls
+ 1402  cd templates/settings/
+ 1403  code settings.html
+ 1404  cd ../../../../
+ 1405  ls
+ 1406  git add *
+ 1407  git commit -m "major updates to header, modernization, modularization etc"
+ 1408  git push origin main
+ 1409  git config --global http.postBuffer 524288000
+ 1410  git push origin main
+ 1411  git add *
+ 1412  git commit -m "updated header, notifications, and subapplication placeholders"
+ 1413  git push origin main
+ 1414  git config http.lowSpeedTime 600
+ 1415  git push origin main
+ 1416  git push 
+ 1417  git remote -v
+ 1418  ls ~/.ssh/id_ed25519.pub
+ 1419  ssh-keygen -t ed25519 -C "chewe.kasonde@outlook.com"
+ 1420  cat ~/.ssh/id_ed25519.pub
+ 1421  ssh -T git@github.com
+ 1422  eval "$(ssh-agent -s)"
+ 1423  ssh-add ~/.ssh/id_ed25519
+ 1424  .
+ 1425  eval "$(ssh-agent -s)"
+ 1426  ssh-add ~/.ssh/id_ed25519
+ 1427  ssh -T git@github.com
+ 1428  cat ~/.ssh/id_ed25519.pub
+ 1429  ssh -T git@github.com
+ 1430  git push origin main
+ 1431  git add .
+ 1432  git commit -m "updates to sidebar, and projects cards"
+ 1433  git push origin main
+ 1434  git pull
+ 1435  git add * 
+ 1436  git commit -m "dashboard skeleton"
+ 1437  git push origin main
+ 1438  cd ~/Projects/PSMG
+ 1439  code .
+ 1440  git pull origin main
+ 1441  cd core
+ 1442  python manage.py runserver
+ 1443  python manage.py makemigrations
+ 1444  python manage.py migrate
+ 1445  python manage.py runserver
+ 1446  python manage.py makemigrations dashboard
+ 1447  python manage.py migrate
+ 1448  python manage.py runserver
+ 1449  python manage.py makemigrations
+ 1450  python manage.py runserver
+ 1451  cd ..
+ 1452  git pull origin main
+ 1453  git stash -m "old version"
+ 1454  git pull origin main
+ 1455  ls
+ 1456  find . -name "*base.html*"
+ 1457  cd ~
+ 1458  ls
+ 1459  cd Projects/PSMG
+ 1460  code .
+ 1461  cd core/
+ 1462  python manage.py runserver
+ 1463  code .
+ 1464  cd ~
+ 1465  cd Projects/PSMG/core
+ 1466  python manage.py runserver
+ 1467  cd ~/Projects/PSMG/core
+ 1468  python manage.py runserver
+ 1469  cd ~
+ 1470  python
+ 1471  cd Projects/PSMG
+ 1472  python
+ 1473  git add *
+ 1474  git commit -m "improving project functionality"
+ 1475  git push origin main
+ 1476  cd dashboard/templates/
+ 1477  tree
+ 1478  cd ../../
+ 1479  ls
+ 1480  python manage.py findstatic js/modals.js
+ 1481  cd ../
+ 1482  git push origin main
+ 1483  git add *
+ 1484  git commit -m "client photo upload modual"
+ 1485  git push origin main
+ 1486  ls
+ 1487  cd planner/
+ 1488  ls
+ 1489  code todo.md 
+ 1490  cd ../
+ 1491  ls
+ 1492  cd media/
+ 1493  ls
+ 1494  tree
+ 1495  cd ../core/
+ 1496  python manage.py runserver
+ 1497  python manage.py makemigrations dashboard
+ 1498  python manage.py migrate
+ 1499  git add *
+ 1500  git commit -m "modals update"
+ 1501  git push origin main
+ 1502  git add *
+ 1503  git commit "client view"
+ 1504  git commit -m "client view"
+ 1505  git push origin main
+ 1506  python manage.py shell
+ 1507  python manage.py makemigrations
+ 1508  python manage.py migrate
+ 1509  .
+ 1510  git add *
+ 1511  git commit -m "broken slide out pane"
+ 1512  git push origin main
+ 1513  git checkout 3bcd48381b9815c4cdaee5c2cea8369f9a94bdd7
+ 1514  git stash -m "rollback check"
+ 1515  git checkout 3bcd48381b9815c4cdaee5c2cea8369f9a94bdd7
+ 1516  python manage.py makemigrations
+ 1517  python manage.py migrate
+ 1518  python manage.py migrate dashboard zero
+ 1519  git stash -m "rollback 2"
+ 1520  git checkout 927d9a2983dba2af47337d254c57041e51bab275
+ 1521  git checkout main
+ 1522  git stash -m "switching to HEAD"
+ 1523  git checkout main
+ 1524  git branch
+ 1525  git log --oneline -n 5
+ 1526  cd ../
+ 1527  ls
+ 1528  cd documentation/
+ 1529  ls
+ 1530  database_design_v1.0.md
+ 1531  nano database_design_v1.0.md
+ 1532  git add *
+ 1533  git commit -m "schema"
+ 1534  git push origin main
+ 1535  ls
+ 1536  nano schema_v1.0.0_summary.md
+ 1537  git add *
+ 1538  git commit -m "summary of database schema"
+ 1539  git push origin main
+ 1540  code schema_v1.0.0_summary.md
+ 1541  git add *
+ 1542  code schema_v1.0.0_summary.md fixed parse error
+ 1543  git add *
+ 1544  git commit -m "summary of database schema fixed parse error"
+ 1545  git push origin main
+ 1546  cd ../
+ 1547  git add *
+ 1548  git commit -m "preparing improved UML for basic users"
+ 1549  git push origin main
+ 1550  ls
+ 1551  cd planner/
+ 1552  ls
+ 1553  cd features/
+ 1554  ls
+ 1555  code features_v1.0.0.md
+ 1556  git add *
+ 1557  git commit -m "refactored features"
+ 1558  git push origin main
+ 1559  cd ../../
+ 1560  git add *
+ 1561  git commit -m "client pane semi-complete, updated models, edit forms etc"
+ 1562  git push origin main
+ 1563  cd core
+ 1564  python manage.py makemigrations
+ 1565  python manage.py migrate
+ 1566  python manage.py makemigrations
+ 1567  python manage.py migrate
+ 1568  git add *
+ 1569  git commit "added client web model"
+ 1570  git commit -m "added client web model"
+ 1571  git push origin main
+ 1572  python manage.py makemigrations
+ 1573  python manage.py migrate
+ 1574  cd ../setup/
+ 1575  ls
+ 1576  pip install -U googlemaps
+ 1577  pip install googlemaps
+ 1578  pip install --no-binary :all: googlemaps
+ 1579  pip3 install googlemaps
+ 1580  sudo pip3 install googlemaps
+ 1581  sudo pip install googlemaps
+ 1582  sudo apt update
+ 1583  sudo pip3 install googlemaps
+ 1584  pip install --no-build-isolation --no-cache-dir googlemaps
+ 1585  pip install --no-binary :all: googlemaps
+ 1586  sudo apt install python3-pip
+ 1587  git clone https://github.com/googlemaps/google-maps-services-python.git
+ 1588  cd google-maps-services-python
+ 1589  pip install .
+ 1590  cd ../
+ 1591  ls
+ 1592  rm -r google-maps-services-python/
+ 1593  y
+ 1594  cd ../
+ 1595  git add *
+ 1596  git commit -m "updated client pane"
+ 1597  git commit --amend
+ 1598  git push origin main
+ 1599  cd planner/
+ 1600  ls
+ 1601  cd features/
+ 1602  ls
+ 1603  code features_v1.0.0.md 
+ 1604  nano tasks.md 
+ 1605  cd ../
+ 1606  ls
+ 1607  code todo.md 
+ 1608  ls
+ 1609  cd features/
+ 1610  code tasks.md
+ 1611  ls
+ 1612  code task_card.md
+ 1613  cd ../
+ 1614  cd ..
+ 1615  git add * 
+ 1616  git commit -m "completed initial project metadata segment"
+ 1617  git push origin main 
+ 1618  cd planner/features/
+ 1619  ls
+ 1620  cd ../../
+ 1621  git add *
+ 1622  git commit -m "updating tasks view"
+ 1623  git push origin main
+ 1624  cd core/dashboard/templates/
+ 1625  tree
+ 1626  cd ../../../
+ 1627  git add * 
+ 1628  git commit -m "major refactoring"
+ 1629  git push origin main
+ 1630  git add *
+ 1631  git commit -m "fixed scaling and inserted task table with filtering functions"
+ 1632  cd core/dashboard/
+ 1633  mkdir test
+ 1634  cd te
+ 1635  cd test/
+ 1636  code test_projects.py
+ 1637  cd ../
+ 1638  python manage.py test dashboard.tests.test_projects
+ 1639  cd dashboard/
+ 1640  ls
+ 1641  tree
+ 1642  cd ../
+ 1643  python manage.py test dashboard.tests
+ 1644  python manage.py test dashboard.tests.DashboardProjectSelectionTest
+ 1645  git stash -m "reverting to working tasks"
+ 1646  git pull origin main
+ 1647  git add *
+ 1648  git commit -m "added pagination and AJAX"
+ 1649  git add *
+ 1650  git commit -m "updating responsive elements"
+ 1651  git push origin main
+ 1652  cd ../static/images/
+ 1653  ls
+ 1654  cd ../
+ 1655  ls
+ 1656  tree
+ 1657  cd ../
+ 1658  ls
+ 1659  cd media/
+ 1660  ls
+ 1661  cd profile_photos
+ 1662  ls
+ 1663  mkdir std
+ 1664  mv default-avatar.png std/
+ 1665  cd std/
+ 1666  ls
+ 1667  cd ../
+ 1668  ls
+ 1669  cp std/default-avatar.png /
+ 1670  cp std/default-avatar.png .
+ 1671  ls
+ 1672  ls ../../static/
+ 1673  cp default-avatar.png ../../static/images
+ 1674  cd ../../core/dashboard/templates/
+ 1675  ls
+ 1676  cd ../../../
+ 1677  cd planner/features/
+ 1678  ls
+ 1679  code status_cards.md
+ 1680  cd ..
+ 1681  cd ../
+ 1682  ls
+ 1683  git add *
+ 1684  git commit -m "improving UI"
+ 1685  git push origin main
+ 1686  git add *
+ 1687  git commit -m "updated projects panel"
+ 1688  git push origin main
+ 1689  python manage.py makemigrations
+ 1690  python manage.py migrate
+ 1691  python manage.py runserver
+ 1692  /usr/bin/python3 /home/kasonde/.vscode-server/extensions/ms-python.python-2025.6.1-linux-x64/python_files/printEnvVariablesToFile.py /home/kasonde/.vscode-server/extensions/ms-python.python-2025.6.1-linux-x64/python_files/deactivate/bash/envVars.txt
+ 1693  cd ~
+ 1694  ls
+ 1695  cd Projects/
+ 1696  cd PSMG
+ 1697  ls
+ 1698  code .
+ 1699  exit
+ 1700  code .
+ 1701  vnano 01.general_notes.md
+ 1702  nano 01.general_notes.md
+ 1703  code .
+ 1704  cd ~
+ 1705  ls
+ 1706  cd Projects/PSMG
+ 1707  code .
+ 1708  conda create env --help
+ 1709  conda create -n BIO -y
+ 1710  conda activate BIO
+ 1711  conda install -c bioconda sra-tools
+ 1712  tree
+ 1713  tree -P *.pdf
+ 1714  cd core/
+ 1715  ls
+ 1716  python manage.py runserver
+ 1717  git add *
+ 1718  git commit -m "fixed profile photo (profile picture) upload modal"
+ 1719  git push origin main
+ 1720  git add *
+ 1721  git commit -m "fixed slide out modal and transition for htmx"
+ 1722  git push origin main
+ 1723  git add *
+ 1724  git commit -m "added calendar button to sidebar"
+ 1725  git push origin main
+ 1726  /usr/bin/python3 /home/kasonde/.vscode-server/extensions/ms-python.python-2025.6.1-linux-x64/python_files/printEnvVariablesToFile.py /home/kasonde/.vscode-server/extensions/ms-python.python-2025.6.1-linux-x64/python_files/deactivate/bash/envVars.txt
+ 1727  cd ~
+ 1728  cd Projects/PSMG
+ 1729  ls
+ 1730  git pull origin main
+ 1731  cd core/
+ 1732  python manage.py runserver
+ 1733  python manage.py makemigrations
+ 1734  python manage.py migrate
+ 1735  python manage.py runserver
+ 1736  python manage.py runserver 8001
+ 1737  code .
+ 1738  cd dashboard 
+ 1739  tree
+ 1740  cd ../../static/js
+ 1741  cd ../../static/
+ 1742  tree
+ 1743  cd ../core/static/js/
+ 1744  tree
+ 1745  cat modals.js 
+ 1746  code createProjectModal.js
+ 1747  code /filterProjects.js
+ 1748  code filterProjects.js
+ 1749  ls
+ 1750  code filterProjects.js 
+ 1751  cd dashboard/templates/
+ 1752  tree
+ 1753  cd ../../
+ 1754  ls
+ 1755  cd ../
+ 1756  git add *
+ 1757  git commit -m "fixed create-new-project modal"
+ 1758  git push origin main
+ 1759  cd core/dashboard/templates/
+ 1760  ls
+ 1761  cd partials/
+ 1762  ls
+ 1763  cd ../../../
+ 1764  ls
+ 1765  cd ../
+ 1766  git add *
+ 1767  git commit -m "initial filter button"
+ 1768  git push origin main
+ 1769  mv core/static/js/filterProjects.js core/static/js/panelControls.js
+ 1770  code core/static/js/modals.js 
+ 1771  git add *
+ 1772  git commit -m "added initial sort functionality"
+ 1773  git push origin main
+ 1774  cd planner/
+ 1775  ls
+ 1776  cd features/
+ 1777  ls
+ 1778  cd ../
+ 1779  ls
+ 1780  cd ../
+ 1781  ls planner/
+ 1782  cd planner/
+ 1783  ls
+ 1784  cd ../
+ 1785  git add *
+ 1786  git commit -m "initalized task panel version 1"
+ 1787  git push origin main
+ 1788  cd core
+ 1789  python manage.py startapp calendar
+ 1790  python manage.py startapp messaging
+ 1791  python manage.py startapp whiteboard
+ 1792  python manage.py startapp files
+ 1793  python manage.py startapp notifications
+ 1794  python manage.py startapp teams
+ 1795  python manage.py startapp billing
+ 1796  python manage.py startapp api
+ 1797  python manage.py startapp audit_log
+ 1798  python manage.py startapp schedules
+ 1799  tree -d
+ 1800  python manage.py makemigrations
+ 1801  python manage.py migrate
+ 1802  cd ../
+ 1803  git add *
+ 1804  git commit -m "added all changes"
+ 1805  git push origin main
+ 1806  python manage.py runserver
+ 1807  cd planner/
+ 1808  mkdir app
+ 1809  cd app
+ 1810  touch dashboard.md schedules.md messaging.md whiteboard.md billing.md audit_log.md files.md teams.md notifications.md settings.md
+ 1811  ls
+ 1812  code overview.md
+ 1813  ls
+ 1814  touch home.md tasks.md
+ 1815  tree
+ 1816  touch subscriptions.md
+ 1817  touch webhooks.md
+ 1818  touch planner.md
+ 1819  cd ../../core/schedules/
+ 1820  ls
+ 1821  mkdir static
+ 1822  mkdir static/js
+ 1823  cd ../../
+ 1824  git add *
+ 1825  git commit -m "initalized calendar app"
+ 1826  git push origin main 
+ 1827  cd core/
+ 1828  python manage.py runserver
+ 1829  python manage.py makemigrations
+ 1830  python manage.py migrate
+ 1831  python manage.py makemigrations dashboard --empty --name populate_contractor_id
+ 1832  python manage.py makemigrations
+ 1833  python manage.py migrate
+ 1834  python manage.py runserver
+ 1835  python manage.py makemigrations
+ 1836  python manage.py migrate
+ 1837  rm dashboard/migrations/0002_remove_project_unique_project_slug_per_contractor_and_more.py
+ 1838  python manage.py migrate dashboard zero
+ 1839  rm dashboard/migrations/0002_remove_project_unique_project_slug_per_contractor_and_more.py
+ 1840  find dashboard/migrations -name "00*.py" -delete
+ 1841  sudo -u postgres psql
+ 1842  python manage.py makemigrations
+ 1843  find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+ 1844  find . -path "*/migrations/*.pyc"  -delete
+ 1845  python manage.py makemigrations
+ 1846  python manage.py migrate
+ 1847  python manage.py runserver
+ 1848  find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+ 1849  python manage.py makemigrations
+ 1850  python manage.py migrate
+ 1851  python manage.py runserver
+ 1852  /usr/bin/python3 /home/kasonde/.vscode-server/extensions/ms-python.python-2025.6.1-linux-x64/python_files/printEnvVariablesToFile.py /home/kasonde/.vscode-server/extensions/ms-python.python-2025.6.1-linux-x64/python_files/deactivate/bash/envVars.txt
+ 1853  cd ~
+ 1854  cd Projects/PSMG
+ 1855  code .
+ 1856  python 
+ 1857  cd ~
+ 1858  ls
+ 1859  cd Practice/
+ 1860  ls
+ 1861  cd Python/
+ 1862  ls
+ 1863  cd libraries/
+ 1864  ls
+ 1865  code .
+ 1866  cd ~/Projects/PSMG
+ 1867  ks
+ 1868  ls
+ 1869  code .
+ 1870  /usr/bin/python3 /home/kasonde/.vscode-server/extensions/ms-python.python-2025.6.1-linux-x64/python_files/printEnvVariablesToFile.py /home/kasonde/.vscode-server/extensions/ms-python.python-2025.6.1-linux-x64/python_files/deactivate/bash/envVars.txt
+ 1871  cd core 
+ 1872  ls
+ 1873  cd dashboard/
+ 1874  ls
+ 1875  tree
+ 1876  cd ../
+ 1877  ls
+ 1878  cd home/
+ 1879  tree
+ 1880  cd templates/
+ 1881  mkdir landing contact about features testimonials cta legal auth
+ 1882  tree -d
+ 1883  cd ../
+ 1884  tree -d
+ 1885  cd templates/
+ 1886  mkdir partials
+ 1887  ls
+ 1888  mv --help
+ 1889  tree
+ 1890  mv auth partials/
+ 1891  tree -d
+ 1892  mv -t partials/ about/ contact/ cta/ landing/ legal/ testimonials/ 
+ 1893  ls
+ 1894  tree
+ 1895  cd partials/
+ 1896  ls
+ 1897  mkdir investors
+ 1898  ls
+ 1899  cd ../
+ 1900  tree
+ 1901  touch base.html
+ 1902  ls
+ 1903  cd home
+ 1904  ls
+ 1905  mkdir ../auth
+ 1906  mv *.html -t ../auth/
+ 1907  ls
+ 1908  mv * -t ../auth/
+ 1909  ls
+ 1910  mv ../auth/index.html .
+ 1911  ls
+ 1912  cd ../
+ 1913  tree
+ 1914  ls
+ 1915  cd ../
+ 1916  ls
+ 1917  cd ../
+ 1918  ls
+ 1919  cd home/templates/
+ 1920  mv base.html home_base.html
+ 1921  ls
+ 1922  mv home_base.html 
+ 1923  mv home_base.html base.html
+ 1924  ls
+ 1925  cd ../
+ 1926  ls
+ 1927  cd templates/
+ 1928  ls
+ 1929  cd home/
+ 1930  ls
+ 1931  ../
+ 1932  cd ../
+ 1933  mv base.html home_base.html
+ 1934  ls
+ 1935  cd ../../dashboard/templates/
+ 1936  ls
+ 1937  cd partials/
+ 1938  tree
+ 1939  cd ../
+ 1940  ls
+ 1941  code /.bashrc
+ 1942  code ~/.bashrc
+ 1943  docker ps
+ 1944  docker ps -a
+ 1945  docker logs node1
+ 1946  docker logs node01
+ 1947  exit
+ 1948  cd Projects/PSMG
+ 1949  ls
+ 1950  cd core
+ 1951  ls
+ 1952  python manage.py runserver
+ 1953  source ~/psmg-venv/bin/activate
+ 1954  python manage.py runserver
+ 1955  cd ~/Projects/PSMG
+ 1956  code .
+ 1957  git add *
+ 1958  git commit -m "landing page upgrades"
+ 1959  ls
+ 1960  git add *
+ 1961  git commit -m "landing page upgrades 2"
+ 1962  git push origin main
+ 1963  code .
+ 1964  docker exec -it node01 bash
+ 1965  docker exec -it node02 bash
+ 1966  docker logs node02
+ 1967  ls
+ 1968  docker exec -it node02 bash
+ 1969  virtualenv --version
+ 1970  cd core
+ 1971  python manage.py runserver
+ 1972  source ~/psmg-venv/bin/activate
+ 1973  python manage.py runserver
+ 1974  /usr/bin/python3 /home/kasonde/.vscode-server/extensions/ms-python.python-2025.6.1-linux-x64/python_files/printEnvVariablesToFile.py /home/kasonde/.vscode-server/extensions/ms-python.python-2025.6.1-linux-x64/python_files/deactivate/bash/envVars.txt
+ 1975  code .
+ 1976  conda activate BIO
+ 1977  pip install geoparse
+ 1978  python3 -m pip install geoparse
+ 1979  pip
+ 1980  conda activate BIO
+ 1981  pip install numpy
+ 1982  conda deactivate
+ 1983  exit
+ 1984  python -m pip 
+ 1985  python -m pip install geoparse
+ 1986  ls
+ 1987  cd geoparser_utils/
+ 1988  ls
+ 1989  cd ../
+ 1990  ls
+ 1991  tar -xvf GSE211483_RAW.tar 
+ 1992  gunzip *
+ 1993  cat .ssh/id_ed25519.pub 
+ 1994  ls
+ 1995  rm -rfv Public/
+ 1996  ls
+ 1997  chmod +x Public/
+ 1998  chmod +777 Public/
+ 1999  chmod 777 Public/
+ 2000  ls
+ 2001  wget https://ftp.ncbi.nlm.nih.gov/geo/series/GSE211nnn/GSE211483/matrix/GSE211483_series_matrix.txt.gz
+ 2002  wget https://ftp.ncbi.nlm.nih.gov/geo/series/GSE211nnn/GSE211483/suppl/GSE211483%5FMatrix%5FProcessed.txt.gz
+ 2003  wget https://www.ncbi.xyz/geo/download/?acc=GSE211483&format=file
+ 2004  wget https://ftp.ncbi.nlm.nih.gov/geo/series/GSE211nnn/GSE211483/suppl/GSE211483%5Funmethylated%5Fmethylated%5Fsignal%5Fintensities.txt.gz
+ 2005  conda env list
+ 2006  conda activate BIO
+ 2007  ls
+ 2008  conda install fasterq-dump
+ 2009  conda install bioconda::sra-tools -y
+ 2010  pip install jupyter
+ 2011  python3 -m pip install jupyter
+ 2012  conda activate SNPS
+ 2013  pip install GEOparse
+ 2014  conda install SRA-tools
+ 2015  fastq-dump
+ 2016  fastq-dump --help
+ 2017  fasterq-dump
+ 2018  conda install bioconda::entrez-direct -y
+ 2019  ls
+ 2020  cat SRX_list.txt 
+ 2021  sh download_fastq.sh 
+ 2022  sudo apt install parallel
+ 2023  sh download_fastq.sh 
+ 2024  ls
+ 2025  sh download_fastq.sh 
+ 2026  cd ~
+ 2027  ls
+ 2028  cd bioinformatics/
+ 2029  ls
+ 2030  rm *
+ 2031  ls
+ 2032  git clone https://github.com/Kaychewe/GSE_Explorer.git
+ 2033  ls
+ 2034  cd GSE_Explorer/
+ 2035  mkdir scripts
+ 2036  ls
+ 2037  history
+ 2038  history > hist.txt
