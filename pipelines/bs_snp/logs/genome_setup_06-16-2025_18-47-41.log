@@ -1,0 +1,1 @@
+srun: error: Invalid numeric value "" for --cpus-per-task.

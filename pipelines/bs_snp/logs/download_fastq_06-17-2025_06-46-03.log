@@ -1,0 +1,13 @@
+[06-17-2025 06:46:03]: Logger initialized
+[06-17-2025 06:46:03]: Logger initialized
+[06-17-2025 06:46:03]: Total available threads: 96
+[06-17-2025 06:46:03]: Using 48
+[06-17-2025 06:46:03]: Starting GSE-to-SRR metadata extraction using pysradb
+[06-17-2025 06:46:03]: Starting GSE-to-SRR metadata extraction using pysradb
+[06-17-2025 06:46:03]: Processing metadata file: /ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/metadata/GSE210218_run_metadata.tsv
+[06-17-2025 06:46:03]: Downloading SRR20731213 (SRS14378624) to /ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/data/fastq/GSE210218/SRR20731213
+Preference setting is: Prefer SRA Normalized Format files with full base quality scores if available.
+SRR20731213 is an SRA Normalized Format file with full base quality scores.
+2025-06-17T10:46:04 fasterq-dump.3.2.1 err: ArgsMakeAndHandle() -> RC(rcExe,rcArgv,rcConstructing,rcParam,rcEmpty)
+fasterq-dump quit with error code 3
+[06-17-2025 06:46:04]: Test mode enabled. Completed first SRR (SRR20731213). Exiting early.

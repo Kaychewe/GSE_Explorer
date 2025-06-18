@@ -1,0 +1,32 @@
+#!/usr/env/bin bash
+
+# === Activate environment ====
+eval "$(conda shell.bash hook)"
+conda activate bsseq_env
+
+# === Variable ==== 
+SHARED_BASE="/ifs/groups/sacanGrp/kc3745/pipelines/bs_snp"
+OUT_DIR=$SHARED_BASE/data/bam
+mkdir -p $OUT_DIR
+SRR_1=$SHARED_DIR/data/fastq/SRR20731213/SRR20731213_1.fastq
+SRR_2=$SHARED_DIR/data/fastq/SRR20731213/SRR20731213_2.fastq
+
+
+# === Logging Setup ===
+timestamp=$(date +"%m-%d-%Y_%H-%M-%S")
+mkdir -p logs
+LOG_FILE="logs/download_fastq_${timestamp}.log"
+export LOG_FILE
+
+# === Import Utility Functions ===
+source utils.sh
+message "Logger initialized" >> "$LOG_FILE" 2>&1
+# GLOBAL VARIABLES
+NTHREADS=$(nproc)
+HALF_NTHREADS=$((NTHREADS / 2))
+message "Total available threads: ${NTHREADS}"
+message "Using ${HALF_NTHREADS}"
+
+
+# === Run alignment ====
+

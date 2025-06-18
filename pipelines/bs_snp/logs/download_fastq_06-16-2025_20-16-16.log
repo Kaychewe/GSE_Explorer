@@ -1,0 +1,8 @@
+[06-16-2025 20:16:16]: Logger initialized
+[06-16-2025 20:16:16]: Total available threads: 96
+[06-16-2025 20:16:16]: Using 48
+[06-16-2025 20:16:16]: Checking installed conda packages...
+[06-16-2025 20:16:17]: Package 'pysradb' is MISSING.
+[06-16-2025 20:16:19]: Package 'bismark' is MISSING.
+[06-16-2025 20:16:19]: Package 'bowtie2' is MISSING.
+[06-16-2025 20:16:20]: Package 'samtools' is MISSING.

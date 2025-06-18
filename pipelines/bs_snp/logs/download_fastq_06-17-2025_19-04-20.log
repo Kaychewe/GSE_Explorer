@@ -1,0 +1,27 @@
+[06-17-2025 19:04:20]: Logger initialized
+[06-17-2025 19:04:20]: Logger initialized
+[06-17-2025 19:04:20]: Total available threads: 96
+[06-17-2025 19:04:20]: Using 48
+[06-17-2025 19:04:20]: Running alignment ... 
+Bowtie 2 seems to be working fine (tested command 'bowtie2 --version' [2.4.1])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/home/kc3745/anaconda3/envs/bsseq_env/bin/samtools'
+Reference genome folder provided is /ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/genome/	(absolute path is '/ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/genome/)'
+FastQ format assumed (by default)
+
+Input files to be analysed (in current folder '/ifs/groups/sacanGrp/kc3745/pipelines/GSE_Explorer/pipelines/bs_snp'):
+/ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/data/fastq/GSE210218/SRR20731213/SRR20731213_1.fastq
+/ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/data/fastq/GSE210218/SRR20731213/SRR20731213_2.fastq
+Library is assumed to be strand-specific (directional), alignments to strands complementary to the original top or bottom strands will be ignored (i.e. not performed!)
+Output will be written into the directory: /ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/data/bam/
+Core usage currently set to more than 20 threads. This might fail horribly but let's see how it goes... (set value: 48)
+
+Summary of all aligner options:	-q --score-min L,0,-0.2 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+Running Bismark Parallel version. Number of parallel instances to be spawned: 48
+
+Current working directory is: /ifs/groups/sacanGrp/kc3745/pipelines/GSE_Explorer/pipelines/bs_snp
+
+Now reading in and storing sequence information of the genome specified in: /ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/genome/
+
+The specified genome folder /ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/genome/ does not contain any sequence files in FastA format (with .fa or .fasta file extensions, with or w/o .gz extension)
+[06-17-2025 19:04:24]: Bismark alignment completed.

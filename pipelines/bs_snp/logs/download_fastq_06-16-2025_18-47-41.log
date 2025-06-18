@@ -1,0 +1,25 @@
+[06-16-2025 18:47:41]: Logger initialized
+[06-16-2025 18:47:41]: Total available threads: 96
+[06-16-2025 18:47:41]: Using 48
+[06-16-2025 18:47:41]: Checking installed conda packages...
+[06-16-2025 18:47:43]: Package 'pysradb' is installed.
+[06-16-2025 18:47:45]: Package 'bismark' is installed.
+[06-16-2025 18:47:47]: Package 'bowtie2' is installed.
+[06-16-2025 18:47:49]: Package 'samtools' is installed.
+[06-16-2025 18:47:51]: Package 'sra-tools' is installed.
+[06-16-2025 18:47:52]: Package 'fastqc' is installed.
+[06-16-2025 18:47:54]: Package 'pandas' is installed.
+[06-16-2025 18:47:56]: Package 'numpy' is installed.
+[06-16-2025 18:47:58]: Package 'matplotlib' is installed.
+[06-16-2025 18:48:00]: Package 'multiqc' is installed.
+[06-16-2025 18:48:00]: All required packages are installed.
+[06-16-2025 18:48:00]: Starting GSE-to-SRR metadata extraction using pysradb
+[06-16-2025 18:48:00]: Querying metadata for GSE210218
+[06-16-2025 18:48:03]: Found study accession SRP389118 for GSE210218
+[06-16-2025 18:48:03]: Saved metadata to /ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/metadata/GSE210218_run_metadata.tsv
+[06-16-2025 18:48:03]: Launching genome setup in background (if needed)...
+[06-16-2025 18:48:03]: Starting FASTQ download step...
+[06-16-2025 18:48:03]: Processing metadata file: /ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/metadata/GSE210218_run_metadata.tsv
+[06-16-2025 18:48:03]: Downloading SRR20731213 (SRS14378624) to /ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/data/fastq/GSE210218/SRR20731213
+[06-16-2025 18:48:43]: Failed to download SRR20731213
+[06-16-2025 18:48:43]: Downloading SRR20731214 (SRS14378623) to /ifs/groups/sacanGrp/kc3745/pipelines/bs_snp/data/fastq/GSE210218/SRR20731214
