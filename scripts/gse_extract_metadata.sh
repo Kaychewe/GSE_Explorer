@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Example usage: ./extract_gse_metadata.sh GSE210218
+# Example usage: ./gse_extract_metadata.sh GSE210218
 
 set -e
 
