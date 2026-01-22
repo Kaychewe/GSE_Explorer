@@ -1,16 +1,114 @@
 #!/bin/bash
 
-# Usage: ./01.download_fastqs.sh ../metadata/GSE210218_run_metadata.csv
+set -e
 
-# Activate conda environment 
-eval "$(conda shell.bash hook)"
-conda activate bsseq_env
+usage() {
+    cat <<'EOF'
+Download FASTQs for SRR accessions listed in a run metadata CSV.
+
+Usage:
+  ./01.download_fastqs.sh --gseid GSE210218 --out /path/to/fastq
+  ./01.download_fastqs.sh --csv ../metadata/GSE210218_run_metadata.csv --out /path/to/fastq
+
+Options:
+  --gseid <GSE_ID>         GEO series id (expects ../metadata/<GSE_ID>_run_metadata.csv)
+  --csv <PATH>             Path to *_run_metadata.csv (overrides --gseid)
+  --out <DIR>              Output directory for FASTQs (required)
+  --tmp <DIR>              Temporary directory for fasterq-dump (default: <out>/.tmp_fasterq)
+  --max-parallel <N>        Max concurrent downloads (default: 3)
+  --threads <N>             Threads per fasterq-dump (default: 8)
+  -h, --help               Show this help
+
+Notes:
+  - Activates conda env "bsseq_env" if conda is available.
+  - The run metadata CSV is typically created by: ./gse_extract_metadata.sh <GSE_ID>
+EOF
+}
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DEFAULT_METADATA_DIR="${SCRIPT_DIR}/../metadata"
 
 # Inputs
-CSV_FILE=$1
-OUT_DIR="/mnt/f/research_drive/methylation/fastq"
-TMP_DIR="/mnt/f/tmp/fasterq"
-MAX_PARALLEL=3  # Adjust this based on your system resources
+GSEID=""
+CSV_FILE=""
+OUT_DIR=""
+TMP_DIR=""
+MAX_PARALLEL=3
+THREADS=8
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --gseid)
+            GSEID="${2:-}"; shift 2;;
+        --csv)
+            CSV_FILE="${2:-}"; shift 2;;
+        --out)
+            OUT_DIR="${2:-}"; shift 2;;
+        --tmp)
+            TMP_DIR="${2:-}"; shift 2;;
+        --max-parallel)
+            MAX_PARALLEL="${2:-}"; shift 2;;
+        --threads)
+            THREADS="${2:-}"; shift 2;;
+        -h|--help)
+            usage; exit 0;;
+        --)
+            shift; break;;
+        -*)
+            echo "Unknown option: $1" >&2
+            usage
+            exit 2;;
+        *)
+            if [[ -z "$CSV_FILE" ]]; then
+                CSV_FILE="$1"
+                shift
+            else
+                echo "Unexpected argument: $1" >&2
+                usage
+                exit 2
+            fi
+            ;;
+    esac
+done
+
+if [[ -z "$CSV_FILE" && -n "$GSEID" ]]; then
+    CSV_FILE="${DEFAULT_METADATA_DIR}/${GSEID}_run_metadata.csv"
+fi
+
+if [[ -z "$OUT_DIR" ]]; then
+    echo "Missing required --out <DIR>" >&2
+    usage
+    exit 2
+fi
+
+if [[ -z "$CSV_FILE" ]]; then
+    echo "Provide either --csv <PATH> or --gseid <GSE_ID>" >&2
+    usage
+    exit 2
+fi
+
+if [[ ! -f "$CSV_FILE" ]]; then
+    echo "CSV file not found: $CSV_FILE" >&2
+    if [[ -n "$GSEID" ]]; then
+        echo "Tip: generate it with: (cd \"$SCRIPT_DIR\" && bash gse_extract_metadata.sh \"$GSEID\")" >&2
+    fi
+    exit 1
+fi
+
+if [[ -z "$TMP_DIR" ]]; then
+    TMP_DIR="${OUT_DIR}/.tmp_fasterq"
+fi
+
+# Activate conda environment (if available)
+if command -v conda >/dev/null 2>&1; then
+    eval "$(conda shell.bash hook)"
+    conda activate bsseq_env
+fi
+
+if ! command -v fasterq-dump >/dev/null 2>&1; then
+    echo "fasterq-dump not found in PATH. Install sra-tools (or run scripts/setup.sh) and try again." >&2
+    exit 1
+fi
 
 mkdir -p "$OUT_DIR"
 mkdir -p "$TMP_DIR"
@@ -29,7 +127,7 @@ download_srr() {
         --split-files \
         -O "$OUT_DIR" \
         --temp "$TMP_DIR" \
-        --threads 8
+        --threads "$THREADS"
 
     if [ $? -eq 0 ]; then
         echo "✅ Successfully downloaded $SRR"
