@@ -1,5 +1,5 @@
 # GSE_Explorer
-Utility scripts to fetch GEO/SRA run metadata and download FASTQs in a reproducible, parameterized way (no hard-coded output paths).
+Utility scripts to fetch GEO/SRA run metadata and download FASTQs in a reproducible, parameterized way 
 
 ## Quickstart
 ```bash
