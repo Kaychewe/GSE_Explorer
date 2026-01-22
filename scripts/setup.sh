@@ -1,6 +1,11 @@
 #!/bin/bash
 
-timestamp=$(date +"%m-%d-%Y %H:%M:%S")
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
 mkdir -p logs
 LOG_FILE="logs/log_${timestamp}.txt"
 
@@ -11,14 +16,12 @@ message() {
 
 # Start logging
 message "Installing GEOparse and other requirements..."
-pip install -r ./../requirements.txt >> "$LOG_FILE" 2>&1
+pip install -r "${REPO_DIR}/requirements.txt" >> "$LOG_FILE" 2>&1
 
 # Create conda environment
-message "Creating conda env "bsseq_env". See logs for stdout & stderr"
-conda create -n bsseq_env -c bioconda bismark bowtie2 samtools -y >> "$LOG_FILE" 2>&1
+message "Creating conda env \"bsseq_env\" (bismark/bowtie2/samtools/sra-tools). See logs for stdout & stderr"
+conda create -n bsseq_env -c bioconda bismark bowtie2 samtools sra-tools -y >> "$LOG_FILE" 2>&1
 
-message "Installing SRA-Tools..."
-conda install -c bioconda sra-tools -y >> "$LOG_FILE" 2>&1
 message "Setup completed."
 
 message "Output saved to $LOG_FILE"

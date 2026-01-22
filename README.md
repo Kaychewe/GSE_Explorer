@@ -1,5 +1,5 @@
 # GSE_Explorer
-Utility scripts to fetch GEO/SRA run metadata, download FASTQs, and run a basic Bismark alignment.
+Utility scripts to fetch GEO/SRA run metadata and download FASTQs in a reproducible, parameterized way (no hard-coded output paths).
 
 ## Quickstart
 ```bash
@@ -7,54 +7,58 @@ git clone https://github.com/Kaychewe/GSE_Explorer.git
 cd GSE_Explorer
 
 # install Python deps + create conda env "bsseq_env"
-# (run from scripts/ due to relative paths used by setup.sh)
-cd scripts
-bash setup.sh
+bash scripts/setup.sh
 ```
 
 ## Requirements
-- Bash + common Unix tools (`awk`, `cut`, `sort`)
-- Python 3.9+ (for Python utilities and `pysradb`)
-- Conda/Miniconda (used for the `bsseq_env` environment)
-- SRA-Tools (`fasterq-dump`) and aligner deps (installed by `scripts/setup.sh`)
+- Bash + common Unix tools (`awk`, `sort`)
+- Python 3.9+
+- Conda/Miniconda
+- `pysradb` (used by `scripts/gse_extract_metadata.sh`)
+- One of:
+  - SRA-Tools (`fasterq-dump`) for NCBI downloads, or
+  - `curl`/`wget` for ENA downloads (HTTPS)
 
-Note: `scripts/gse_extract_metadata.sh` uses `pysradb`. Install it if you don’t already have it:
+Install `pysradb` if you don’t already have it:
 ```bash
 pip install pysradb
 ```
 
 ## Typical workflow
 ### 1) Extract run metadata from a GEO series (GSE → SRP → SRR list)
-This writes a CSV file to `metadata/`.
+This writes a `*_run_metadata.csv` file.
 ```bash
-cd scripts
-bash gse_extract_metadata.sh GSE210218
-# output: ../metadata/GSE210218_run_metadata.csv
+bash scripts/gse_extract_metadata.sh --gseid GSE210218
+```
+
+To write metadata into a per-experiment folder:
+```bash
+bash scripts/gse_extract_metadata.sh --gseid GSE210218 --out "<EXPERIMENT_DIR>/metadata"
 ```
 
 ### 2) Download FASTQs for all SRRs in the metadata CSV
 ```bash
-cd scripts
-bash 01.download_fastqs.sh ../metadata/GSE210218_run_metadata.csv
+bash scripts/01.download_fastqs.sh --gseid GSE210218 --out "<EXPERIMENT_DIR>/fastq"
 ```
 
-Important: `scripts/01.download_fastqs.sh` currently writes to hard-coded paths:
-- `OUT_DIR="/mnt/f/research_drive/methylation/fastq"`
-- `TMP_DIR="/mnt/f/tmp/fasterq"`
-
-Edit those variables in the script to match your system before running.
-
-### 3) Alignment example (Bismark)
-`scripts/02.alignment.sh` is an example alignment run. It currently assumes:
-- WSL + a Windows `F:` drive mount at `/mnt/f` (requires `sudo mount ...`)
-- A local genome at `GENOME_DIR=~/genomes/hg38`
-- A single sample hard-coded as `SRR20731213`
-
-Edit `GENOME_DIR`, `INPUT_DIR`, `OUTPUT_DIR`, and the SRR filename(s) before running:
+You can also pass a CSV directly:
 ```bash
-cd scripts
-bash 02.alignment.sh
+bash scripts/01.download_fastqs.sh --csv "<EXPERIMENT_DIR>/metadata/GSE210218_run_metadata.csv" --out "<EXPERIMENT_DIR>/fastq"
+```
+
+### Download sources (NCBI vs ENA)
+Some environments block plain HTTP or have strict TLS policies.
+
+`scripts/01.download_fastqs.sh` supports:
+- `--source sra` to use `fasterq-dump`
+- `--source ena` to use ENA HTTPS URLs found in the metadata file
+- `--source auto` (default) to try SRA first and fall back to ENA if needed
+
+Example (force ENA):
+```bash
+bash scripts/01.download_fastqs.sh --csv "<..._run_metadata.csv>" --out "<FASTQ_DIR>" --source ena
 ```
 
 ## Logs
-`scripts/setup.sh` writes logs to `scripts/logs/`.
+- `scripts/setup.sh` writes logs to `scripts/logs/`.
+- `scripts/01.download_fastqs.sh` writes per-run logs under `--tmp/logs/`.
